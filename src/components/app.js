@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
-import {Routes, Route, useNavigate} from"react-router-dom"
-import {Register} from "./index"
+//import {Routes, Route, useNavigate} from"react-router-dom"
+//import {Register} from "./index"
 
 
 function App(){

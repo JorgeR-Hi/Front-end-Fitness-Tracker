@@ -26,7 +26,7 @@ function Login ({ setToken, navigate }) {
             />
             <input 
             type='text'
-            placeholder='Enter Username'
+            placeholder='Enter Password'
             onChange={(event)=> setPassword (event.target.value)}
             />
             <button type='submit'> Submit </button>

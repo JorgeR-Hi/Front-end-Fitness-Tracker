@@ -4,10 +4,6 @@ import {Register} from "./index"
 
 
 function App(){
-    const [token, setToken]=useState("");
-    const [user, setUser]=useState("");
-    const navigate = useNavigate()
-
    return (
     <>
     <div id="Title">

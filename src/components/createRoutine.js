@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./style.css";
+
 
 function createRoutine({token, getRoutines}){
     const [title, setTitle ]= useState('');
@@ -15,6 +15,7 @@ function createRoutine({token, getRoutines}){
         }
     }
     return (
+        <>
         <form onSubmit={handleSubmit}>
             <input 
             type='text'
@@ -29,6 +30,7 @@ function createRoutine({token, getRoutines}){
             onChange={(event)=> {setWorkout(event.target.value) }}
             />
         </form>
+        </>
     )
 
 }

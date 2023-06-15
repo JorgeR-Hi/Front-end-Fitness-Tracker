@@ -1,9 +1,9 @@
 const COHORT_NAME ="2301-ftb-et-web-pt";
 
-const BASE_URL = `https://fitnesstrac-kr.herokuapp.com/${COHORT_NAME}`
+const BASE_URL = `https://fitnesstrac-kr.herokuapp.com/api/${COHORT_NAME}`
 
 //========Registering===========
-export const registerUser = async () => {
+export const registerUser = async (user) => {
     try {
       const response = await fetch(
         `${BASE_URL}/users/register`, {
@@ -13,8 +13,8 @@ export const registerUser = async () => {
         },
         body: JSON.stringify({
           user: {
-            username,
-            password 
+            username: user.username,
+            password: user.password
           }
         })
       });
@@ -22,6 +22,7 @@ export const registerUser = async () => {
       // As written below you can log your result
       // to check what data came back from the above code.
       console.log(result)
+      console.log(user);
       return result
     } catch (err) {
       console.error(err);
@@ -37,8 +38,8 @@ export const login = async () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            username,
-            password 
+            username: user.name,
+            password: user.password
         })
       });
       const result = await response.json();
@@ -48,3 +49,5 @@ export const login = async () => {
       console.error(err);
     }
 }
+
+//======Token Check=======

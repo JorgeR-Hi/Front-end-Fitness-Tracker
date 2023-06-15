@@ -4,6 +4,23 @@ import {Register} from "./index"
 
 
 function App(){
+    const [token, setToken] = useState("")
+    const [user, setUser]=useState("")
+    const [isLoggedIn, setIsLoggedIn]=useState(false)
+    const [routines, setRoutines]= useState("")
+    const [activites, setActivites]=useState("")
+
+    const navigate = useNavigate();
+    
+    function tokenCheck(){
+        if(window.localStorage.getItem("token")){
+            setToken(window.localStorage.getItem("token"))
+        }
+    }
+
+    useEffect(() => {
+        tokenCheck();
+    }, [])
    return (
     <>
     <div id="Title">
@@ -13,10 +30,12 @@ function App(){
     <Routes>
         <Route
         path="/register"
-        element={<Register 
+        element={<Register
             setToken={setToken}
-            navigate={navigator}/>}
+            navigate={navigate}/>}
+        />
         </Routes>
+        
         </>
    )
 }

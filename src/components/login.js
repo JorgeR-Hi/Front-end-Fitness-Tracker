@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import {login } from 
+import {login } from "./endpoints/user"
 function Login ({ setToken, navigate }) {
 
     const [username, setUsername] = useState('');

@@ -12,22 +12,22 @@ function Register({setToken}){
         ev.preventDefault()
         const user = {username, password}
         
-        /*if(!password || password.length < 8){
+        if(!password || password.length < 8){
             alert("Password is too short must be at least 8 characters")
             console.log("Password is too short must be at least 8 characters.")
             return;
-        }*/
+        }
         const results = await registerUser(user)
-        //const token = results.token;
-        // setToken(token)
+        const token = results.token;
+        setToken(token)
         console.log(results)
         console.log(user)
 
-        // if(results.sucess){
-        //     setToken(results.data.token)
-        //     window.localStorage.setItem("token", results.data.token)
-        //     //navigate("/")
-        // }
+        if(results.sucess){
+            setToken(results.data.token)
+            window.localStorage.setItem("token", results.data.token)
+            navigate("/")
+        }
     }
 
     return (

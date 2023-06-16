@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {Routes, Route, useNavigate} from"react-router-dom"
 import {Register, Nav} from "./index"
+import "./style.css"
 
 
 function App(){
@@ -23,8 +24,8 @@ function App(){
     }, [])
    return (
     <>
-    <div id="Title">
-        <h1>Fitness Tracker</h1>
+    <div>
+        <h1 className="title">Fitness Tracker</h1>
     </div>
     
     <Routes>

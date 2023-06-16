@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom"
 import { registerUser } from "./endpoints/user";
-
+import "./style.css"
 
 function Register({setToken}){
     const [username, setUsername] = useState("");
@@ -32,7 +32,7 @@ function Register({setToken}){
 
     return (
         <div id="register">
-            <h1>register</h1>
+            <h1 className="welcomeMsg">Register here to create an account</h1>
             <form onSubmit={handleSubmit}>
                 <input
                 type="text"

@@ -11,21 +11,23 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f1d8d8;
+    background-color: #f9f3f3;
     padding: 20px;
   }
 
-  .Title{
+  .title{
+    color:blue;
     font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-animation-duration:4s;
+
   }
 
-  .welcomemsg{
-    font-size: 15px;
+  .welcomeMsg{
+    color:rgb(93, 93, 115);
+    font-size: 30 px;
     display: flex;
     align-items: center;
     flex-direction: column;

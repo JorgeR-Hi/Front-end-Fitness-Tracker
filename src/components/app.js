@@ -28,11 +28,11 @@ function App(){
     </div>
     
     <Routes>
-        <Nav
+        {/* <Nav
         setToken={setToken}
         setIsLoggedIn={setIsLoggedIn}
         isLoggedin={isLoggedIn}
-        />
+        /> */}
         <Route
         path="/register"
         element={<Register

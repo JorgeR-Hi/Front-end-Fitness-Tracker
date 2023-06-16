@@ -22,6 +22,9 @@ return(
     <button className="viewUserRoutineBtn">
         <Link to="/userRoutines">View Your Routines </Link>
     </button>
+    <button>
+        <Link onClick={logout}>Log Out</Link>
+    </button>
     </>
     ):(
     <>

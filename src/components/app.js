@@ -29,6 +29,11 @@ function App(){
     
     <Routes>
         <Route
+        path="/"
+        setToken={setToken}
+        setIsLoggedIn={setIsLoggedIn}
+        />
+        <Route
         path="/register"
         element={<Register
             setToken={setToken}

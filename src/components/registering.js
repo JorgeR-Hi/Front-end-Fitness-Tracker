@@ -13,10 +13,13 @@ function Register({setToken}){
 
         const results = await registerUser(user)
         const token = results.token;
-
+        if(!password || password.length < 8){
+            console.log("Password is too short must be at least 8 characters.")
+            return;
+        }
         setToken(token)
         console.log(results)
-        console.log(user);
+        console.log(user)
 
         if(results.sucess){
             setToken(results.data.token)

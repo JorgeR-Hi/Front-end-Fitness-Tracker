@@ -1,12 +1,13 @@
-const COHORT_NAME ="2301-ftb-et-web-pt";
 
-const BASE_URL = `https://fitnesstrac-kr.herokuapp.com/${COHORT_NAME}`
 
-const fetchRoutines = async () => {
+const BASE_URL = `https://fitnesstrac-kr.herokuapp.com/api`
+
+const fetchRoutines = async (token) => {
     try {
     const response = await fetch(`${BASE_URL}/routines`, {
       headers: {
       'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`
       },
     });
     

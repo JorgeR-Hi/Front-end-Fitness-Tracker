@@ -1,6 +1,6 @@
-const COHORT_NAME ="2301-ftb-et-web-pt";
 
-const BASE_URL = `https://fitnesstrac-kr.herokuapp.com/api/${COHORT_NAME}`
+
+const BASE_URL = `https://fitnesstrac-kr.herokuapp.com/api`
 
 //========Registering===========
 export const registerUser = async (user) => {
@@ -22,14 +22,14 @@ export const registerUser = async (user) => {
       // As written below you can log your result
       // to check what data came back from the above code.
       console.log(result)
-      console.log(user);
+      //console.log(user);
       return result
     } catch (err) {
       console.error(err);
     }
   }
 //=======Login========
-export const login = async () => {
+export const login = async (user) => {
       
     try {
       const response = await fetch(`${BASE_URL}/users/login`, {

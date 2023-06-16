@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {Routes, Route, useNavigate} from"react-router-dom"
-import {Register} from "./index"
+import {Register, Nav} from "./index"
 
 
 function App(){
@@ -28,10 +28,10 @@ function App(){
     </div>
     
     <Routes>
-        <Route
-        path="/"
+        <Nav
         setToken={setToken}
         setIsLoggedIn={setIsLoggedIn}
+        isLoggedin={isLoggedIn}
         />
         <Route
         path="/register"

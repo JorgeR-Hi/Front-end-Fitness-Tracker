@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import {login } from "./endpoints/user"
 function Login ({ setToken, navigate }) {
 
@@ -14,10 +15,18 @@ function Login ({ setToken, navigate }) {
         if (results.success){
             setToken(results.data.token);
             window.localStorage.setItem('token', results.data.token);
-            navigate('/');
+            navigate('/routines');
+        }
+        if(!password || password.length < 8){
+            alert("Password is too short must be at least 8 characters")
+            console.log("Password is too short must be at least 8 characters.")
+            return;
         }
     }
-    return (
+    function handleHome(){
+        navigate("/");
+    }
+    return (<>
         <form onSubmit={handleSubmit}>
             <input
             type='text'
@@ -30,7 +39,13 @@ function Login ({ setToken, navigate }) {
             onChange={(event)=> setPassword (event.target.value)}
             />
             <button type='submit'> Submit </button>
+            <button type="button" onClick={handleHome}>Home</button>
+
         </form>
+        
+
+
+        </>
     )
 }
 export default Login;

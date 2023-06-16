@@ -26,10 +26,12 @@ function Register({setToken}){
         if(results.sucess){
             setToken(results.data.token)
             window.localStorage.setItem("token", results.data.token)
-            navigate("/")
+            navigate("/routines")
         }
     }
-
+    function handleHome(){
+        navigate("/")
+    }
     return (
         <div id="register">
             <h1>register</h1>
@@ -45,7 +47,7 @@ function Register({setToken}){
                 onChange={(ev) => setPassword(ev.target.value)}
                 />
                 <button type="submit">Create Account</button>
-
+                <button onClick={handleHome}>Home</button>
             </form>
         </div>
     )

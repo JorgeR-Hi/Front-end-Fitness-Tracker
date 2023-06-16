@@ -28,6 +28,9 @@ return(
     </>
     ):(
     <>
+    <button className ="registerBtn">
+        <Link to="/register">Register</Link>
+    </button>
     <button className ="loginBtn">
         <Link to="/login"> Login </Link>
     </button>

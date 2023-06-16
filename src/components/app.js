@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from "react";
 import {Routes, Route, useNavigate} from"react-router-dom"
-import {Register, Nav} from "./index"
-import "./style.css"
+import {
+    Register, 
+    Nav,
+    Login
+} from "./index"
 
 
 function App(){
@@ -29,11 +32,20 @@ function App(){
     </div>
     
     <Routes>
-        {/* <Nav
+        <Route
+        path="/"
+        element={<Nav
         setToken={setToken}
         setIsLoggedIn={setIsLoggedIn}
-        isLoggedin={isLoggedIn}
-        /> */}
+        isLoggedin={isLoggedIn}/>}
+        />
+        <Route
+        path="/login"
+        element={<Login
+        setToken={setToken}
+        navigate={navigate}
+        />}
+        />
         <Route
         path="/register"
         element={<Register

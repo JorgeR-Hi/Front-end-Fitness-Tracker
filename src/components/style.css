@@ -13,25 +13,34 @@ body {
     height: 100vh;
     background-color: #f9f3f3;
     padding: 20px;
+    background-image:url("workingout2.jpg");
+    background-size: 100vw 100vh;
   }
 
   .title{
-    color:blue;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
+    color: rgb(188, 188, 241);
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  background-color: rgb(241, 150, 14);
+  background-size: contain;
+  border-radius: 5px;
   }
 
   .welcomeMsg{
-    color:rgb(93, 93, 115);
-    font-size: 30 px;
+    color:rgb(188, 188, 241);
+    font-size: 25 px;
     display: flex;
     align-items: center;
     flex-direction: column;
-   
+    background-color: rgb(229, 72, 156);
+   text-align: center;
+   border-radius: 5px;
+  }
+  a{color:rgb(141, 141, 170);
+    font-size: 25px;
+    
   }
 
   

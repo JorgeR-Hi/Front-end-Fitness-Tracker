@@ -34,7 +34,7 @@ function Register({setToken}){
     }
     return (
         <div id="register">
-            <h1 className="welcomeMsg">Register here to create an account</h1>
+            <h1 data-text className="welcomeMsg">Register <span>Here!</span></h1>
             <form onSubmit={handleSubmit}>
                 <input
                 type="text"

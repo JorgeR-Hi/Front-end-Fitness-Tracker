@@ -18,6 +18,9 @@ body {
   }
 
   .title{
+    margin-top: 0;
+    padding-top: 0;
+    height: 100px;
     color: rgb(188, 188, 241);
   font-size: 50px;
   display: flex;
@@ -26,8 +29,13 @@ body {
   background-color: rgb(241, 150, 14);
   background-size: contain;
   border-radius: 5px;
+  -webkit-text-stroke: 0.1vw blue;
   }
+#register{
+height:max-content;
+width:max-content;
 
+}
   .welcomeMsg{
     color:rgb(188, 188, 241);
     font-size: 25 px;
@@ -37,9 +45,27 @@ body {
     background-color: rgb(229, 72, 156);
    text-align: center;
    border-radius: 5px;
+   -webkit-text-stroke: 0.1vw blue;
+   animation: animate 6s linear infinite;
+   overflow: hidden;
   }
-  a{color:rgb(141, 141, 170);
+  @keyframes animate 
+  {
+0%, 10%, 100%
+{
+  width: 0%;
+} 70%,90%
+  {width: 100%}
+}
+
+  
+  a{
+    color:rgb(141, 141, 170);
     font-size: 25px;
+    background-color: pink;
+    background-size: 100;
+    height: max-content;
+    position: sticky;
     
   }
 

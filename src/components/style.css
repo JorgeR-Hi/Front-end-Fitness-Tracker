@@ -62,13 +62,15 @@ width:max-content;
 
   
   a{
-    color:rgb(141, 141, 170);
+    color: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
     font-size: 25px;
-    background-color: pink;
+    /* background-color: pink; */
     background-size: 100;
     height: max-content;
     position: sticky;
-    
+    /* background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033); */
+    height: 30px;
+    width: 50px
   }
 .setUsername{
   font-size: 20px;
@@ -89,3 +91,60 @@ width:max-content;
     background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
     font-size: 20px;
   }
+.signup{
+  background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
+  animation: animate 6s linear infinite;
+  overflow: hidden;
+  text-align: center;
+  text-rendering:geometricPrecision;
+  text-anchor: start;
+ }
+ @keyframes animate 
+ {
+0%, 10%, 100%
+{
+ width: 0%;
+} 70%,90%
+ {width: 100%}
+}
+.Login{
+  background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
+  animation: animate 6s linear infinite;
+  overflow: hidden;
+  text-align: center;
+  text-rendering:geometricPrecision;
+  text-anchor: start;
+ }
+ @keyframes animate 
+ {
+0%, 10%, 100%
+{
+ width: 0%;
+} 70%,90%
+ {width: 100%}
+}
+.or{
+  background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
+  animation: animate 6s linear infinite;
+  overflow: hidden;
+  text-align: center;
+  text-rendering:geometricPrecision;
+  text-anchor: start;
+ }
+ @keyframes animate 
+ {
+0%, 10%, 100%
+{
+ width: 0%;
+} 70%,90%
+ {width: 100%}
+}
+
+
+
+
+.homeMessageContainer{
+  min-height: auto;
+  position: sticky;
+  
+}

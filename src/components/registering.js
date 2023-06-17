@@ -37,17 +37,19 @@ function Register({setToken}){
             <h1 data-text className="welcomeMsg">Register <span>Here!</span></h1>
             <form onSubmit={handleSubmit}>
                 <input
+                className="setUsername"
                 type="text"
                 placeholder="Enter Username"
                 onChange={(ev) => setUsername(ev.target.value)}
                 />
                 <input
+                className="setPassword"
                 type="text"
                 placeholder="Enter Password"
                 onChange={(ev) => setPassword(ev.target.value)}
                 />
-                <button type="submit">Create Account</button>
-                <button onClick={handleHome}>Home</button>
+                <button className= "createActBtn" type="submit">Create Account</button>
+                <button className="homeBtn" onClick={handleHome}>Home</button>
             </form>
         </div>
     )

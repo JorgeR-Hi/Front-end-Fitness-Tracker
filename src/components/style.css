@@ -30,6 +30,7 @@ body {
   background-size: contain;
   border-radius: 5px;
   -webkit-text-stroke: 0.1vw blue;
+  background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
   }
 #register{
 height:max-content;
@@ -42,7 +43,8 @@ width:max-content;
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(229, 72, 156);
+    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
+    background-color: rgb(178, 11, 239);
    text-align: center;
    border-radius: 5px;
    -webkit-text-stroke: 0.1vw blue;
@@ -68,5 +70,16 @@ width:max-content;
     position: sticky;
     
   }
-
+.setUsername{
+  font-size: 20px;
   
+}
+.setPassword{
+  font-size: 20px;
+}
+  .createActBtn{
+    font-size: 20px;
+  }
+  .homeBtn{
+    font-size: 20px;
+  }

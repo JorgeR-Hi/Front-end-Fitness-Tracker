@@ -8,30 +8,31 @@ function Register({setToken}){
     const [password, setPassword]= useState("");
     const navigate = useNavigate();
 
-    async function handleSubmit(ev){
-        ev.preventDefault()
-        const user = {username, password}
-        
-        if(!password || password.length < 8){
-            alert("Password is too short must be at least 8 characters")
-            console.log("Password is too short must be at least 8 characters.")
-            return;
+    async function handleSubmit(ev) {
+        ev.preventDefault();
+        const user = { username, password };
+      
+        if (!password || password.length < 8) {
+          alert("Password is too short, it must be at least 8 characters");
+          return;
         }
-        const results = await registerUser(user)
-        const token = results.token;
-        setToken(token)
-        console.log(results)
-        console.log(user)
-
-        if(results && results.success){
-            setToken(results.data.token)
-            window.localStorage.setItem("token", results.data.token)
-            navigate("/routines")
+      
+        const results = await registerUser(user);
+        console.log(results); // Print the results object to the console
+      
+        if (results && results.token) {
+          const token = results.token;
+          setToken(token);
+          window.localStorage.setItem("token", token);
+          navigate("/login");
+        } else {
+          alert("There was a problem registering");
+          console.log("Register has failed");
         }
     }
     function handleHome(){
-        navigate("/")
-    }
+      navigate("/")
+  }
     return (
         <div id="register">
             <h1 data-text className="welcomeMsg">Register <span>Here!</span></h1>

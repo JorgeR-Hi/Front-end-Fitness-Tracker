@@ -5,17 +5,26 @@ function Login ({ setToken, navigate }) {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-
-    async function handleSubmit(event) {
-        event.preventDefault();
+    
+    
+    async function handleSubmit(ev) {
+        ev.preventDefault();
         const user = {username, password};
-
         const results = await login(user);
+        
+        console.log("this is the frontend!!!!",results);
+        console.log("Results", results)
 
-        if (results.success){
-            setToken(results.data.token);
-            window.localStorage.setItem('token', results.data.token);
-            navigate('/routines');
+        if (results){
+            console.log("Login successful!!!: ", results.success)
+            const token = results.token;
+            setToken(token);
+            window.localStorage.setItem('token', results.token);
+            console.log('Redirecting to home page...'); 
+            navigate("/")
+        }else{
+            console.log("login not successful")
+            alert("Login was not successful sorry try again", results.error)
         }
         if(!password || password.length < 8){
             alert("Password is too short must be at least 8 characters")
@@ -31,14 +40,14 @@ function Login ({ setToken, navigate }) {
             <input
             type='text'
             placeholder='Enter Username'
-            onChange={(event)=> setUsername (event.target.value)}
+            onChange={(ev)=> setUsername (ev.target.value)}
             />
             <input 
             type='text'
             placeholder='Enter Password'
-            onChange={(event)=> setPassword (event.target.value)}
+            onChange={(ev)=> setPassword (ev.target.value)}
             />
-            <button type='submit'> Submit </button>
+            <button type='submit'> Login </button>
             <button type="button" onClick={handleHome}>Home</button>
 
         </form>

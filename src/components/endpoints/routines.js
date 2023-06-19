@@ -2,12 +2,12 @@
 
 const BASE_URL = `https://fitnesstrac-kr.herokuapp.com/api`
 
-const fetchRoutines = async (token) => {
+export const fetchRoutines = async (token) => {
     try {
     const response = await fetch(`${BASE_URL}/routines`, {
       headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
       },
     });
     

@@ -3,15 +3,17 @@ import {Routes, Route, useNavigate} from"react-router-dom"
 import {
     Register, 
     Nav,
-    Login
+    Login,
+    Routines
 } from "./index"
-
+import {fetchRoutines} from "./endpoints/routines"
+import {myData} from "./endpoints/user"
 
 function App(){
     const [token, setToken] = useState("")
-    const [user, setUser]=useState("")
+    const [user, setUser]=useState({})
     const [isLoggedIn, setIsLoggedIn]=useState(false)
-    const [routines, setRoutines]= useState("")
+    const [routines, setRoutines]= useState([])
     const [activites, setActivites]=useState("")
 
     const navigate = useNavigate();
@@ -21,10 +23,31 @@ function App(){
             setToken(window.localStorage.getItem("token"))
         }
     }
+    async function getMyData(){
+        const results = await myData(token)
+        if(results.success){
+            setUser(results.data)
+        }
+    }
+    async function getRoutines(){
+        const results =await fetchRoutines(token)
+        if(results.success){
+            setUser(results.data)
+        }
+    }
 
     useEffect(() => {
         tokenCheck();
     }, [])
+    useEffect(() => {
+        getRoutines();
+        if(token){
+            getMyData();
+            setIsLoggedIn(true);
+        }
+    }, [token])
+
+
    return (
     <>
     <div className ="homeMessageContainer">
@@ -56,9 +79,16 @@ function App(){
             setToken={setToken}
             navigate={navigate}/>}
         />
-        </Routes>
-        
-        </>
+        <Route
+        path="/routines"
+        element={<Routines
+        token={token}
+        getRoutines={getRoutines}
+        isLoggedIn={isLoggedIn}
+        />}
+        />         
+    </Routes>
+    </>
    )
 }
 

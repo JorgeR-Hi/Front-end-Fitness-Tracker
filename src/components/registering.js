@@ -23,7 +23,7 @@ function Register({setToken}){
         console.log(results)
         console.log(user)
 
-        if(results.sucess){
+        if(results && results.success){
             setToken(results.data.token)
             window.localStorage.setItem("token", results.data.token)
             navigate("/routines")

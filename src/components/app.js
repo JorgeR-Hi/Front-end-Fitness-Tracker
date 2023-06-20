@@ -6,15 +6,14 @@ import {
     Login,
     Routines
 } from "./index"
-import {fetchRoutines} from "./endpoints/routines"
+import {fetchAllRoutines} from "./endpoints/routines"
 import {myData} from "./endpoints/user"
 
 function App(){
     const [token, setToken] = useState("")
     const [user, setUser]=useState({})
     const [isLoggedIn, setIsLoggedIn]=useState(false)
-    const [routines, setRoutines]= useState([])
-    const [activites, setActivites]=useState("")
+    const [activites, setActivites]=useState([])
 
     const navigate = useNavigate();
     
@@ -30,7 +29,7 @@ function App(){
         }
     }
     async function getRoutines(){
-        const results =await fetchRoutines(token)
+        const results =await fetchAllRoutines(token)
         if(results.success){
             setUser(results.data)
         }

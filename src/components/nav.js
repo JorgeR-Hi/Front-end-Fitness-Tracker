@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 
 function Nav({ setToken, setIsLoggedIn, isLoggedIn}){
-function logout(){
+
+    function logout(){
     setToken ('');
     setIsLoggedIn(false);
     window.localStorage.removeItem("token")
@@ -22,6 +23,9 @@ return(
     <button className="viewUserRoutineBtn">
         <Link to="/userRoutines">View Your Routines </Link>
     </button>
+    <button className ="viewRoutinesBtn">
+        <Link to="/routines"> View All Routines </Link>
+        </button>
     <button>
         <Link onClick={logout}>Log Out</Link>
     </button>

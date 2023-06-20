@@ -20,6 +20,9 @@ return(
     <Link to="/createRoutine">Create Routine</Link>
 
     </button>
+    <button>
+        <Link to="/createActivity">Create Activity</Link>
+    </button>
     <button className="viewUserRoutineBtn">
         <Link to="/userRoutines">View Your Routines </Link>
     </button>

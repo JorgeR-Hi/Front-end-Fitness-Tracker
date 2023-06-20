@@ -7,13 +7,14 @@ function createRoutine({token, getRoutines}){
 
     async function handleSubmit(event){
         event.preventDefault();
-        const post = {title, workout}
-        const results = await makePost(post, token)
+        const routine = {title, workout}
+        const results = await makePost(routine, token)
 
         if(results.success){
             getPosts();
         }
     }
+    
     return (
         <>
         <form onSubmit={handleSubmit}>
@@ -28,8 +29,9 @@ function createRoutine({token, getRoutines}){
             placeholder='Workout description'
             value={workout}
             onChange={(event)=> {setWorkout(event.target.value) }}
-            />
+            /> 
         </form>
+        <button type="submit" onClick={handleHome}>Home</button>
         </>
     )
 

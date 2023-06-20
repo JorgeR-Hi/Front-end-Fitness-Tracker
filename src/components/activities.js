@@ -16,16 +16,18 @@ function Activities({navigate}){
         navigate("/")
     }
     return (
+    <>
         <div id="list-acitivies">
+            <h2>Activites</h2>
+            {activities.map((activity) => (
+                <div key={activity.id}>
+                    <h3>{activity.name}</h3>
+                    <p>{activity.description}</p>
+                </div>
+            ))}
+        </div>
         <button type="sumbit" onClick={handleHome}>Home</button>
-        <h2>Activites</h2>
-        {activities.map((activity) => (
-          <div key={activity.id}>
-            <h3>{activity.name}</h3>
-            <p>{activity.description}</p>
-          </div>
-        ))}
-      </div>
+    </>
     );
 
 }

@@ -13,8 +13,8 @@ import {myData} from "./endpoints/user"
 function App(){
     const [token, setToken] = useState("")
     const [user, setUser]=useState({})
+    const [routines, setRoutines]= useState([])
     const [isLoggedIn, setIsLoggedIn]=useState(false)
-    const [activites, setActivites]=useState([])
 
     const navigate = useNavigate();
     
@@ -29,12 +29,13 @@ function App(){
             setUser(results.data)
         }
     }
-    async function getRoutines(){
-        const results =await fetchAllRoutines(token)
-        if(results.success){
-            setUser(results.data)
+    async function getRoutines() {
+        const results = await fetchAllRoutines(token);
+        if (results.success) {
+          setRoutines(results.data); 
         }
-    }
+      }
+      
 
     useEffect(() => {
         tokenCheck();
@@ -63,7 +64,7 @@ function App(){
         element={<Nav
         setToken={setToken}
         setIsLoggedIn={setIsLoggedIn}
-        isLoggedin={isLoggedIn}/>}
+        isLoggedIn={isLoggedIn} />}
         />
         <Route
         path="/login"

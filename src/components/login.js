@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import {login } from "./endpoints/user"
-function Login ({ setToken, navigate }) {
+function Login ({ setToken, navigate, setIsLoggedIn }) {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -20,6 +20,7 @@ function Login ({ setToken, navigate }) {
             const token = results.token;
             setToken(token);
             window.localStorage.setItem('token', results.token);
+            setIsLoggedIn(true);
             console.log('Redirecting to home page...'); 
             navigate("/")
         }else{
@@ -43,7 +44,7 @@ function Login ({ setToken, navigate }) {
             onChange={(ev)=> setUsername (ev.target.value)}
             />
             <input 
-            type='text'
+            type='password'
             placeholder='Enter Password'
             onChange={(ev)=> setPassword (ev.target.value)}
             />

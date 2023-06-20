@@ -45,7 +45,7 @@ function Register({setToken}){
                 />
                 <input
                 className="setPassword"
-                type="text"
+                type="password"
                 placeholder="Enter Password"
                 onChange={(ev) => setPassword(ev.target.value)}
                 />

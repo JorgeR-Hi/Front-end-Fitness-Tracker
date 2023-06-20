@@ -40,7 +40,10 @@ return(
     </button>
         <button className ="viewRoutinesBtn">
         <Link to="/routines"> Routines </Link>
-        </button>
+    </button>
+    <button>
+        <Link to="/activities">Activites</Link>
+    </button>
   </>  
 
 )}

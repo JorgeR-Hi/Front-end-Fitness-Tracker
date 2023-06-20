@@ -4,7 +4,8 @@ import {
     Register, 
     Nav,
     Login,
-    Routines
+    Routines,
+    Activities
 } from "./index"
 import {fetchAllRoutines} from "./endpoints/routines"
 import {myData} from "./endpoints/user"
@@ -69,6 +70,8 @@ function App(){
         element={<Login
         setToken={setToken}
         navigate={navigate}
+        setIsLoggedIn={setIsLoggedIn}
+        isLoggedIn={isLoggedIn}
         />}
         />
         <Route
@@ -82,10 +85,17 @@ function App(){
         path="/routines"
         element={<Routines
         token={token}
-        getRoutines={getRoutines}
-        isLoggedIn={isLoggedIn}
+        navigate={navigate}
         />}
-        />         
+        />
+        <Route
+        path="/activities"
+        element={<Activities
+        token={token}
+        navigate={navigate}
+        />}
+        /> 
+        
     </Routes>
     </>
    )

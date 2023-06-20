@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
+
 import {fetchAllRoutines} from "./endpoints/routines"
 
 
-function Routines() {
+function Routines({navigate}) {
 const [routines, setRoutines] = useState([]);
 
 useEffect(() => {
@@ -14,7 +14,9 @@ useEffect(() => {
     }
     AllRoutines();
 }, [])
-
+function handleHome(){
+    navigate("/")
+}
 return (
     <div>
     <h2>Routines</h2>
@@ -24,9 +26,9 @@ return (
         <p>{routine.description}</p>
         <p>Creator: {routine.creatorName}</p>
         <p>Goal: {routine.goal}</p>
-        {/* Add additional routine details here */}
       </div>
     ))}
+    <button type="sumbit" onClick={handleHome}>Home</button>
   </div>
 );
 }

@@ -18,14 +18,14 @@ function handleHome(){
     navigate("/")
 }
 return (
-    <div>
+    <div className ="routines">
     <h2>Routines</h2>
     {routines.map((routine) => (
       <div key={routine.id}>
-        <h3>{routine.name}</h3>
+        <h3 className="routineName">{routine.name}</h3>
         <p>{routine.description}</p>
-        <p>Creator: {routine.creatorName}</p>
-        <p>Goal: {routine.goal}</p>
+        <p className="creator">Creator: {routine.creatorName}</p>
+        <p className="goal">Goal: {routine.goal}</p>
       </div>
     ))}
     <button type="sumbit" onClick={handleHome}>Home</button>

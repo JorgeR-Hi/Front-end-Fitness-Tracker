@@ -148,3 +148,88 @@ width:max-content;
   position: sticky;
   
 }
+.routines{
+
+  background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
+
+}
+.routineName{
+  margin: auto;
+  font-size: 25px;
+  font-weight: 300;
+  animation: lights 5s 750ms linear infinite;
+  text-transform: uppercase;
+  background: rgb(101, 101, 222);
+  border-radius: 10px;
+  text-align: center;
+}
+
+  @keyframes lights {
+    0% {
+      color: hsl(231, 94%, 49%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+    30% { 
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    40% { 
+      color: hsl(230, 100%, 95%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 90%, 0.5),
+        -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+        0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    70% {
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        -0.5em 0.125em 0.25em hsla(200, 79%, 26%, 0.4);
+    }
+    
+    100% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+  }
+  .creator{
+    text-align: center;
+    margin: auto;
+  font-size: 25px;
+  font-weight: 300;
+  animation: lights 5s 750ms linear infinite;
+  text-transform: uppercase;
+  background: rgb(101, 101, 222);
+  border-radius: 10px;
+
+  }
+
+  .goal{
+    text-align: center;
+  font-size: 25px;
+  font-weight: 300;
+  font-family:monospace;
+  }
+  
+
+
+  

@@ -64,8 +64,8 @@ function App(){
 
    return (
     <>
+    <h1 className="title">Fitness Tracker</h1>
     <div className ="homeMessageContainer">
-        <h1 className="title">Fitness Tracker</h1>
         <h3 className="signup"> Register</h3>
         <h4 className="or"> Or </h4>
         <h3 className="Login "> Login </h3>

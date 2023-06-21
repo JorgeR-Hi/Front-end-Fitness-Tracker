@@ -19,7 +19,7 @@ function handleHome(){
 }
 return (
     <div className ="routines">
-    <h2>Routines</h2>
+    <h2 className ="routine-title">Routines</h2>
     {routines.map((routine) => (
       <div key={routine.id}>
         <h3 className="routineName">{routine.name}</h3>
@@ -28,7 +28,9 @@ return (
         <p className="goal">Goal: {routine.goal}</p>
       </div>
     ))}
-    <button type="sumbit" onClick={handleHome}>Home</button>
+    <div className="homeBtnContainer">
+    <button className="homeBtn" type="sumbit" onClick={handleHome}>Home</button>
+    </div>
   </div>
 );
 }

@@ -17,16 +17,17 @@ function Activities({navigate}){
     }
     return (
     <>
-        <div id="list-acitivies">
-            <h2>Activites</h2>
+  
+        <div className="activities-container">
+            <h2 className= "activities-title"> Activites</h2>
             {activities.map((activity) => (
                 <div key={activity.id}>
-                    <h3>{activity.name}</h3>
-                    <p>{activity.description}</p>
+                    <h3 className="activity-name">{activity.name}</h3>
+                    <p className="activity-description">{activity.description}</p>
                 </div>
             ))}
         </div>
-        <button type="sumbit" onClick={handleHome}>Home</button>
+        <button className="homeBtn" type="sumbit" onClick={handleHome}>Home</button>
     </>
     );
 

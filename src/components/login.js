@@ -38,17 +38,19 @@ function Login ({ setToken, navigate, setIsLoggedIn }) {
     return (<>
         <form onSubmit={handleSubmit}>
             <input
+            className="username"
             type='text'
             placeholder='Enter Username'
             onChange={(ev)=> setUsername (ev.target.value)}
             />
             <input 
+            className='password'
             type='password'
             placeholder='Enter Password'
             onChange={(ev)=> setPassword (ev.target.value)}
             />
-            <button type='submit'> Login </button>
-            <button type="button" onClick={handleHome}>Home</button>
+            <button className="loginBtn" type='submit'> Login </button>
+            <button className="loginHomeBtn" type="button" onClick={handleHome}>Home</button>
 
         </form>
         

@@ -7,7 +7,8 @@ import {
     Routines,
     Activities,
     CreateActivity,
-    CreateRoutine
+    CreateRoutine,
+    AllUserRoutines
 } from "./index"
 import {fetchAllActivities} from "./endpoints/activites"
 import {fetchAllRoutines} from "./endpoints/routines"
@@ -119,6 +120,14 @@ function App(){
         <Route
         path="/createRoutine"
         element={<CreateRoutine
+        token={token}
+        navigate={navigate}
+        isLoggedIn={isLoggedIn}
+        />}
+        />
+        <Route
+        path="/userRoutines"
+        element={<AllUserRoutines
         token={token}
         navigate={navigate}
         isLoggedIn={isLoggedIn}

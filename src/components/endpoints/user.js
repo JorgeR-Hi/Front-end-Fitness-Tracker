@@ -17,7 +17,7 @@ export const registerUser = async (user) => {
         })
       });
       const result = await response.json();
-      //console.log("REGISTER RESULT", result);
+      console.log("REGISTER RESULT", result);
     
       // As written below you can log your result
       // to check what data came back from the above code.
@@ -50,18 +50,3 @@ export const login = async (user) => {
 }
 
 //=========My Data==========
-export const myData = async (token) => {
-  try {
-    const response = await fetch(`${BASE_URL}/users/me`, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      },
-    });
-    const result = await response.json();
-    console.log(result);
-    return result
-  } catch (err) {
-    console.error(err);
-  }
-}

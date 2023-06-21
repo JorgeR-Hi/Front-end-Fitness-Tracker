@@ -10,7 +10,7 @@ import {
 } from "./index"
 import {fetchAllActivities} from "./endpoints/activites"
 import {fetchAllRoutines} from "./endpoints/routines"
-import {myData} from "./endpoints/user"
+//import {myData} from "./endpoints/user"
 
 function App(){
     const [token, setToken] = useState("")
@@ -18,18 +18,13 @@ function App(){
     const [routines, setRoutines]= useState([])
     const [activities, setActivities]= useState([])
     const [isLoggedIn, setIsLoggedIn]=useState(false)
-
+    
+    
     const navigate = useNavigate();
     
     function tokenCheck(){
         if(window.localStorage.getItem("token")){
             setToken(window.localStorage.getItem("token"))
-        }
-    }
-    async function getMyData(){
-        const results = await myData(token)
-        if(results.success){
-            setUser(results.data)
         }
     }
     async function getRoutines() {
@@ -51,9 +46,8 @@ function App(){
         tokenCheck();
     }, [])
     useEffect(() => {
-       
         if(token){
-            getMyData();
+            //getMyData();
             setIsLoggedIn(true);
             getActivities();
         }

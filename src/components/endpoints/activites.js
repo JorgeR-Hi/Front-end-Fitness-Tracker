@@ -17,7 +17,7 @@ export const fetchAllActivities = async () => {
     }
   }
 
-  export const makeActivity = async (token, activity) => {
+  export const makeActivity = async (token, name, description) => {
     try {
       const response = await fetch(`${BASE_URL}/activities`, {
         method: "POST",
@@ -27,8 +27,8 @@ export const fetchAllActivities = async () => {
           
         },
         body: JSON.stringify({
-          name: activity.name,
-          description: activity.description
+          name: name,
+          description: description
         }) 
       });
       
@@ -40,4 +40,26 @@ export const fetchAllActivities = async () => {
     } catch (err) {
       console.error(err);
     }
+  }
+
+  export const updateActivity = async (token, activity) => {
+    try {
+      const response = await fetch(`${BASE_URL}/activities`, {
+        headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+        },
+        method: "PATCH",
+        body: JSON.stringify({
+          name: activity.name,
+          description: activity.description
+        })
+      });
+  
+        const result = await response.json();
+        console.log(result);
+        return result
+      } catch (err) {
+      console.error(err);
+      }
   }

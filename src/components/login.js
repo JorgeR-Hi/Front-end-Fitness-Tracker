@@ -5,7 +5,7 @@ function Login ({ setToken, navigate, setIsLoggedIn }) {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    
+   
     
     async function handleSubmit(ev) {
         ev.preventDefault();
@@ -16,9 +16,8 @@ function Login ({ setToken, navigate, setIsLoggedIn }) {
         console.log("Results", results)
 
         if (results){
-            console.log("Login successful!!!: ", results.success)
-            const token = results.token;
-            setToken(token);
+            console.log("Login successful!!!: ", results)
+            setToken(results.token);
             window.localStorage.setItem('token', results.token);
             setIsLoggedIn(true);
             console.log('Redirecting to home page...'); 

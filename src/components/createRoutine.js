@@ -1,40 +1,45 @@
 import React, { useState } from 'react';
+import { makeRoutine } from './endpoints/routines';
 
+function createRoutine({token, navigate}){
+    const [name, setName]= useState("")
+    const [goal, setGoal]=useState("")
+    const [isPublic, setIsPublic]= useState(null)
 
-function createRoutine({token, getRoutines}){
-    const [title, setTitle ]= useState('');
-    const [workout, setWorkout]= useState('');
-
-    async function handleSubmit(event){
-        event.preventDefault();
-        const routine = {title, workout}
-        const results = await makePost(routine, token)
-
-        if(results.success){
-            getPosts();
-        }
+    function handleHome(){
+        navigate("/")
     }
-    
     return (
-        <>
-        <form onSubmit={handleSubmit}>
-            <input 
-            type='text'
-            placeholder="Title"
-            value={title}
-            onChange={(event)=> {setTitle(event.target.value)}}
+        <form onSubmit={async (ev) => {
+            ev.preventDefault();
+            await makeRoutine(token, name, goal, isPublic)
+            setName("")
+            setGoal("")
+            setIsPublic(null)
+            navigate("/routines")
+        }}>
+            <input
+            type="text"
+            placeholder="Enter the Name"
+            value={name}
+            onChange={(ev) => setName(ev.target.value)}
             />
-            <input 
-            type='text'
-            placeholder='Workout description'
-            value={workout}
-            onChange={(event)=> {setWorkout(event.target.value) }}
-            /> 
+            <input
+            type="text"
+            placeholder="Enter a Goal"
+            value={goal}
+            onChange={(ev) => setGoal(ev.target.value)}
+            />
+            <p>Please check if you wish this to be public</p>
+            <input
+            type="checkbox"
+            checked={null}
+            onChange={() => setIsPublic(true)}
+            />
+            <button type="submit">Create your Routine</button>
+            <button type="submit" onClick={handleHome}>Home</button>
         </form>
-        <button type="submit" onClick={handleHome}>Home</button>
-        </>
     )
-
 }
 
 export default createRoutine;

@@ -6,11 +6,12 @@ import {
     Login,
     Routines,
     Activities,
-    CreateActivity
+    CreateActivity,
+    CreateRoutine
 } from "./index"
 import {fetchAllActivities} from "./endpoints/activites"
 import {fetchAllRoutines} from "./endpoints/routines"
-//import {myData} from "./endpoints/user"
+import {myData} from "./endpoints/user"
 
 function App(){
     const [token, setToken] = useState("")
@@ -39,6 +40,12 @@ function App(){
           setActivities(results.data); 
         }
     }
+    async function getMyData() {
+        const results = await myData(token);
+        if (results.success){
+          setUser(results.data);
+        }
+      }
       
       
 
@@ -47,7 +54,7 @@ function App(){
     }, [])
     useEffect(() => {
         if(token){
-            //getMyData();
+            getMyData();
             setIsLoggedIn(true);
             getActivities();
         }
@@ -105,10 +112,18 @@ function App(){
         path="/createActivity"
         element={<CreateActivity 
         token={token}
-        getActivities={getActivities}
+        
         navigate={navigate}
         isLoggedIn={isLoggedIn}
         />}/>
+        <Route
+        path="/createRoutine"
+        element={<CreateRoutine
+        token={token}
+        navigate={navigate}
+        isLoggedIn={isLoggedIn}
+        />}
+        />
     </Routes>
     </>
    )

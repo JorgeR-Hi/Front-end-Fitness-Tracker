@@ -42,7 +42,7 @@ export const fetchAllActivities = async () => {
     }
   }
 
-  export const updateActivity = async (token, activity) => {
+  export const updateActivity = async (token, name, description) => {
     try {
       const response = await fetch(`${BASE_URL}/activities`, {
         headers: {
@@ -51,8 +51,8 @@ export const fetchAllActivities = async () => {
         },
         method: "PATCH",
         body: JSON.stringify({
-          name: activity.name,
-          description: activity.description
+          name: name,
+          description: description
         })
       });
   

@@ -28,7 +28,7 @@ function CreateActivity({token, navigate}){
             value={description}
             onChange={(ev) => setDescription(ev.target.value)}
             />
-            <button type="submit">Create Activity</button>
+            <button type="submit">Create your Activity</button>
             <button type="submit" onClick={handleHome}>Home</button>
         </form>
     )

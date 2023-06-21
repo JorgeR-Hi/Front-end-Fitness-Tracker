@@ -4,7 +4,7 @@ import { makeRoutine } from './endpoints/routines';
 function createRoutine({token, navigate}){
     const [name, setName]= useState("")
     const [goal, setGoal]=useState("")
-    const [isPublic, setIsPublic]= useState(null)
+    const [isPublic, setIsPublic]= useState(false)
 
     function handleHome(){
         navigate("/")
@@ -33,8 +33,8 @@ function createRoutine({token, navigate}){
             <p>Please check if you wish this to be public</p>
             <input
             type="checkbox"
-            checked={null}
-            onChange={() => setIsPublic(true)}
+            checked={isPublic}
+            onChange={() => setIsPublic(!isPublic)}
             />
             <button type="submit">Create your Routine</button>
             <button type="submit" onClick={handleHome}>Home</button>

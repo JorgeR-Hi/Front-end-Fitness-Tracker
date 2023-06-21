@@ -1,22 +1,29 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { userRoutines } from "./endpoints/user";
 
-import {userRoutines} from "./endpoints/user"
+function UserRoutines({ token, user, navigate}) {
+  const [routines, setRoutines] = useState([]);
 
-
-function AllUserRoutines({user, token, navigate}) {
-const [routines, setRoutines] = useState([]);
-useEffect(() => {
-    async function UserRoutines(){
-        const result = await userRoutines(user, token)
-        console.log(result);
-        setRoutines(result)
+  useEffect(() => {
+    async function fetchUserRoutines() {
+      try {
+        const result = await userRoutines(token, user);
+        console.log(result)
+        setRoutines(result);
+      } catch (error) {
+        console.error(error);
+      }
     }
-    UserRoutines();
-}, [])
+    
+    fetchUserRoutines();
+  }, [user, token]);
+
+console.log(user)
+
 function handleHome(){
-    navigate("/")
+  navigate("/")
 }
-return (
+  return (
     <div>
       <h2>Routines</h2>
       {Array.isArray(routines) && routines.length > 0 ? (
@@ -24,7 +31,7 @@ return (
           <div key={routine.id}>
             <h3>{routine.name}</h3>
             <p>{routine.description}</p>
-            {/* <p>Creator: {routine.creatorName}</p> */}
+            <p>Creator: {routine.creatorName}</p> 
             <p>Goal: {routine.goal}</p>
           </div>
         ))
@@ -39,8 +46,4 @@ return (
   );
 }
 
-
-
-
-
-export default AllUserRoutines
+export default UserRoutines;

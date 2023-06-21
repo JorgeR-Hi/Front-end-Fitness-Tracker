@@ -49,22 +49,23 @@ export const login = async (user) => {
     }
 }
 //==========UserRoutines==========
-export const userRoutines= async (user, token) => {
-
+export const userRoutines = async (token, user) => {
   try {
-    const response = await fetch(`${BASE_URL}/users/${user}/routines`, {
+    const response = await fetch(`${BASE_URL}/users/${user.username}/routines`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       },
     });
     const result = await response.json();
+
     console.log(result);
-    return result
+    return result;
   } catch (err) {
     console.error(err);
   }
-}
+};
+
 
 //=========My Data==========
 export const myData = async (token) => {

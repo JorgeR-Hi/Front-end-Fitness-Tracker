@@ -31,20 +31,20 @@ function App(){
     }
     async function getRoutines() {
         const results = await fetchAllRoutines(token);
-        if (results.success) {
-          setRoutines(results.data); 
+        if (results) {
+          setRoutines(results); 
         }
       }
     async function getActivities() {
         const results = await fetchAllActivities(token);
-        if (results.success) {
-          setActivities(results.data); 
+        if (results) {
+          setActivities(results); 
         }
     }
     async function getMyData() {
         const results = await myData(token);
-        if (results.success){
-          setUser(results.data);
+        if (results){
+          setUser(results);
         }
       }
       
@@ -57,7 +57,7 @@ function App(){
         if(token){
             getMyData();
             setIsLoggedIn(true);
-            getActivities();
+            setUser(user)
         }
     }, [token])
 
@@ -131,6 +131,7 @@ function App(){
         token={token}
         navigate={navigate}
         isLoggedIn={isLoggedIn}
+        user={user}
         />}
         />
     </Routes>

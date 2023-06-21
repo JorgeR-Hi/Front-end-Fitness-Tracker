@@ -28,7 +28,10 @@ return(
     </button>
     <button className ="viewRoutinesBtn">
         <Link to="/routines"> View All Routines </Link>
-        </button>
+    </button>
+    <button>
+        <Link to="/activities">View All Activites</Link>
+    </button>
     <button>
         <Link onClick={logout}>Log Out</Link>
     </button>

@@ -108,7 +108,7 @@ function App(){
         />}
         /> 
         <Route
-        path="/createRoutine"
+        path="/createActivity"
         element={<CreateActivity 
         token={token}
         getActivities={getActivities}

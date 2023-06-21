@@ -17,7 +17,7 @@ export const fetchAllActivities = async () => {
     }
   }
 
-  export const makeActivity = async (token, name, description) => {
+  export const makeActivity = async (token, activity) => {
     try {
       const response = await fetch(`${BASE_URL}/activities`, {
         method: "POST",
@@ -27,8 +27,8 @@ export const fetchAllActivities = async () => {
           
         },
         body: JSON.stringify({
-          name: name,
-          description: description
+          name: activity.name,
+          description: activity.description
         }) 
       });
       

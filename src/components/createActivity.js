@@ -1,30 +1,21 @@
 import React, {useState} from "react";
 import {makeActivity} from "./endpoints/activites"
 
-function CreateActivity({token, getActivities, navigate, isLoggedIn}){
+function CreateActivity({token, navigate}){
     const [name, setName]= useState("")
     const [description, setDescription]=useState("")
-    
-    async function handleSubmit(ev){
-        ev.preventDefault();
-        const activity= {name, description}
-        console.log(token)
-        const result = await makeActivity(activity, isLoggedIn, token)
 
-        
-        if(result.success){
-            getActivities();
-            navigate("/activities");
-        }else{
-            alert("There was an error making your activity please try again later.")
-        }
-
-    }
     function handleHome(){
         navigate("/")
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={async (ev) => {
+            ev.preventDefault();
+            await makeActivity(token, name, description)
+            setName("")
+            setDescription("")
+            navigate("/activities")
+        }}>
             <input
             type="text"
             placeholder="Enter the Name"

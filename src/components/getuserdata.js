@@ -17,7 +17,7 @@ function UserRoutines({ token, user, navigate}) {
     }
     
     fetchUserRoutines();
-  }, [user, token]);
+  }, [token, user]);
 
 console.log(user)
 

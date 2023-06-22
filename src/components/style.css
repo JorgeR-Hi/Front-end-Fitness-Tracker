@@ -352,7 +352,8 @@ margin: auto;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
   }
-  .publicyn{font-size: 25px;
+  .publicyn{
+    font-size: 25px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
     animation: lights 5s 750ms linear infinite;
@@ -374,4 +375,24 @@ margin: auto;
     height:20px;
     size: 50px;
     align-items: center;
+  }
+
+  .yourRoutines{
+    font-size: 25px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
+    animation: lights 5s 750ms linear infinite;
+
+  }
+  .noRoutines{
+
+    font-size: 25px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
+    animation: lights 5s 750ms linear infinite;
+  }
+  .routineHomeBtn{
+    font-size: 25px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
   }

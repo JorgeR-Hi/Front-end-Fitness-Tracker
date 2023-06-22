@@ -15,9 +15,9 @@ function UserRoutines({ token, user, navigate}) {
         console.error(error);
       }
     }
-    
+
     fetchUserRoutines();
-  }, [token, user]);
+  }, [user, token]);
 
 console.log(user)
 
@@ -26,21 +26,28 @@ function handleHome(){
 }
   return (
     <div>
-      <h2 className="yourRoutines">Routines</h2>
+      <h2>All of your Routines</h2>
+
       {Array.isArray(routines) && routines.length > 0 ? (
-        routines.map((routine) => (
+            routines.map((routine) => (
+        <React.Fragment key={routine.id}>
           <div key={routine.id}>
             <h3>{routine.name}</h3>
             <p>{routine.description}</p>
             <p>Creator: {routine.creatorName}</p> 
             <p>Goal: {routine.goal}</p>
-          </div>
-        ))
-      ) : (
-        <p className= "noRoutines"> No routines found.</p>
-      )}
 
-      <button className="routineHomeBtn"type="submit" onClick={handleHome}>
+          </div>
+        <button>
+          <Link to={`updateRoutine/${routine.id}`}>Edit</Link>
+        </button>
+        </React.Fragment>
+        ))
+        ) : (
+          <p>No routines found.</p>
+          )}
+
+      <button type="submit" onClick={handleHome}>
         Home
       </button>
     </div>

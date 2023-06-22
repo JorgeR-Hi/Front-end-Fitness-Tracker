@@ -124,6 +124,14 @@ function App(){
         user={user}
         />}
         />
+        <Route
+        path="/userRoutines/updateRoutine/:routineId"
+        element={<UpdateRoutine
+        token={token}
+        navigate={navigate}
+        routines={routines}
+        />}
+        />
     </Routes>
     </>
    )

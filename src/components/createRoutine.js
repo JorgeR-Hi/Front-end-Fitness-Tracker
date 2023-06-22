@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { makeRoutine } from './endpoints/routines';
-
+import "./style.css"
 function createRoutine({token, navigate}){
     const [name, setName]= useState("")
     const [goal, setGoal]=useState("")
@@ -19,12 +19,14 @@ function createRoutine({token, navigate}){
             navigate("/routines")
         }}>
             <input
+            className="createRoutineName"
             type="text"
             placeholder="Enter the Name"
             value={name}
             onChange={(ev) => setName(ev.target.value)}
             />
             <input
+            className="enterGoal"
             type="text"
             placeholder="Enter a Goal"
             value={goal}

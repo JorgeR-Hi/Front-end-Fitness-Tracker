@@ -314,5 +314,36 @@ margin: auto;
   border-radius: 10px;
   }
 
+.createRoutineName{
+  font-size: 25px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
 
-  
+}
+  .enterGoal{
+    font-size: 25px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
+  }
+  .createActivityName{
+
+    font-size: 25px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
+  }
+  .createActivityDescription{
+    font-size: 25px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
+  }
+  .submitActivity{
+    font-size: 25px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
+
+  }
+  .activityHome{
+    font-size: 25px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033);
+  }

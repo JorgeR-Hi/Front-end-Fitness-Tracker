@@ -26,7 +26,7 @@ function handleHome(){
 }
   return (
     <div>
-      <h2>Routines</h2>
+      <h2 className="yourRoutines">Routines</h2>
       {Array.isArray(routines) && routines.length > 0 ? (
         routines.map((routine) => (
           <div key={routine.id}>
@@ -37,7 +37,7 @@ function handleHome(){
           </div>
         ))
       ) : (
-        <p>No routines found.</p>
+        <p className= "noRoutines"> No routines found.</p>
       )}
 
       <button className="routineHomeBtn"type="submit" onClick={handleHome}>

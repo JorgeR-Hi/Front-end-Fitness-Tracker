@@ -84,7 +84,7 @@ margin: auto;
    animation: animate 15s linear infinite;
    overflow: hidden;
    font-family: monospace;
-   font-size: 55px;
+   font-size: 35px;
   }
   @keyframes animate 
   {

@@ -62,12 +62,29 @@ export const updateRoutine = async (token, routine) => {
     });
     const result = await response.json();
     console.log(result)
-    console.log(routine);
-    console.log(token)
+    // console.log(routine);
+    // console.log(token)
     return result;
   } catch (err) {
     console.error(err);
   }
 };
 
+//==========Delete a Routine============
+export const deleteRoutine = async (token, routineId) => {
+  try {
+    const response = await fetch(`${BASE_URL}/routines/${routineId}`, {
+      method: "DELETE",
+      headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+      },
+    });
+    const result = await response.json();
+    console.log(result);
+    return result
+  } catch (err) {
+    console.error(err);
+  }
+}
 

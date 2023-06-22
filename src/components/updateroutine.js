@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { updateRoutine } from "./endpoints/routines";
+import { updateRoutine, deleteRoutine } from "./endpoints/routines";
 import { useParams } from "react-router";
 
 
@@ -9,9 +9,9 @@ const {routineId} = useParams();
 const [routine] = routines.filter((routine) => routine.id === routineId);
 
 
-//const {name, goal} = routine ? routine : {};
-const [name, setName] = useState( "");
-const [goal, setGoal] = useState( "");
+
+const [name, setName] = useState("");
+const [goal, setGoal] = useState("");
 const [isPublic, setIsPublic] = useState(false ?? "")
 
 function handleHome(){
@@ -20,11 +20,13 @@ function handleHome(){
 function handleRoutines(){
   navigate("/userRoutines")
 }
-function handleDelete(){
+async function handleDelete(){
   try{
-    
+    await deleteRoutine(token, routineId)
+    navigate("/userRoutines")
   }catch(err){
     if(err){
+      console.log("This is the error :",err)
       alert("There was and error deleting your Rouitne")
     }
   }

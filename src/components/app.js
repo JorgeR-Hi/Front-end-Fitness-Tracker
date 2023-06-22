@@ -30,18 +30,7 @@ function App(){
             setToken(window.localStorage.getItem("token"))
         }
     }
-    async function getRoutines() {
-        const results = await fetchAllRoutines(token);
-        if (results) {
-          setRoutines(results); 
-        }
-      }
-    async function getActivities() {
-        const results = await fetchAllActivities(token);
-        if (results) {
-          setActivities(results); 
-        }
-    }
+   
     async function getMyData() {
         const results = await myData(token);
         if (results){
@@ -140,7 +129,7 @@ function App(){
         element={<UpdateRoutine
         token={token}
         navigate={navigate}
-        getRoutines={getRoutines}
+        
         routines={routines}
         />}
         />

@@ -6,14 +6,19 @@ import { useParams } from "react-router";
 const UpdateRoutine = ({routines, getRoutines, token, navigate}) => {
   
 const {routineId} = useParams();
-const [routine] = routines.filter((routine) => routine.id === routineId)
+const [routine] = routines.filter((routine) => routine.id === routineId);
 
-const {name, goal} = routine ? routine : {};
-const [updatedName, setName] = useState(name);
-const [updatedGoal, setGoal] = useState(goal);
+
+//const {name, goal} = routine ? routine : {};
+const [name, setName] = useState( "");
+const [goal, setGoal] = useState( "");
+const [isPublic, setIsPublic] = useState(false ?? "")
 
 function handleHome(){
   navigate("/")
+}
+function handleRoutines(){
+  navigate("/userRoutines")
 }
 function handleDelete(){
   try{
@@ -30,13 +35,30 @@ function handleDelete(){
       <form
         onSubmit={async (ev) => {
           ev.preventDefault();
-          await updateRoutine(token, routine);
+          if (!name.trim() && !goal.trim()) {
+            alert("Please provide a new name or goal for the routine.");
+            return;
+          }
+          try{
+          await updateRoutine(token, 
+            { 
+              id: routineId,
+              name: name, 
+              goal: goal, 
+              isPublic: isPublic
+            });
+
           getRoutines();
           navigate("/userRoutines")
+          }catch(err){
+            if(err){
+              console.log("This is the error:", err)
+              alert("There was an Error when editing your routine")
+            }
+          }
         }}
       >
         <input
-          variant="standard"
           value={name}
           type="text"
           placeholder="new name of routine"
@@ -46,7 +68,7 @@ function handleDelete(){
         />
 
         <input
-        vairant= "standard"
+        
         value= {goal}
         type="text"
         placeholder="new goal"
@@ -54,9 +76,16 @@ function handleDelete(){
             setGoal(ev.target.value);
         }}
         />
+        <p>Please check if you wish this to be public</p>
+            <input
+            type="checkbox"
+            checked={isPublic}
+            onChange={() => setIsPublic(!isPublic)}
+            />
         <button type="submit">Submit Changes</button>
 
       </form>
+      <button type="submit" onClick={handleRoutines}>Go Back</button>
       <button type="submit" onClick={handleDelete}>Delete</button>
       <button type="submit" onClick={handleHome}>Home</button>
     </div>

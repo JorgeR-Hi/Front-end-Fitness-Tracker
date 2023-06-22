@@ -136,7 +136,7 @@ function App(){
         />}
         />
         <Route
-        path="/userRoutines/updateRoutine"
+        path="/userRoutines/updateRoutine/:routineId"
         element={<UpdateRoutine
         token={token}
         navigate={navigate}

@@ -51,20 +51,23 @@ export const updateRoutine = async (token, routine) => {
     const response = await fetch(`${BASE_URL}/routines/${routine.id}`, {
       method: "PATCH",
       headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
       },
       body: JSON.stringify({
-        name: routine.name,
-        goal: routine.goal
+        isPublic: routine.isPublic,
+        name: routine.name, 
+        goal: routine.goal, 
       })
     });
     const result = await response.json();
-    console.log(result);
-    return result
+    console.log(result)
+    console.log(routine);
+    console.log(token)
+    return result;
   } catch (err) {
     console.error(err);
   }
-}
-    
+};
+
 

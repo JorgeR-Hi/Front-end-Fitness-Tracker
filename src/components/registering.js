@@ -11,7 +11,10 @@ function Register({setToken}){
     async function handleSubmit(ev) {
         ev.preventDefault();
         const user = { username, password };
-      
+        if(!username.trim()){
+          alert("Please enter a username")
+          return; 
+        }
         if (!password || password.length < 8) {
           alert("Password is too short, it must be at least 8 characters");
           return;

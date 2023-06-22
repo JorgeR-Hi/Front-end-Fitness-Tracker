@@ -20,17 +20,17 @@ function handleHome(){
 function handleRoutines(){
   navigate("/userRoutines")
 }
-async function handleDelete(){
-  try{
-    await deleteRoutine(token, routineId)
-    navigate("/userRoutines")
-  }catch(err){
-    if(err){
-      console.log("This is the error :",err)
-      alert("There was and error deleting your Rouitne")
-    }
-  }
-}
+// async function handleDelete(){
+//   try{
+//     await deleteRoutine(token, routineId)
+//     navigate("/userRoutines")
+//   }catch(err){
+//     if(err){
+//       console.log("This is the error :",err)
+//       alert("There was and error deleting your Rouitne")
+//     }
+//   }
+// }
   return (
     <div>
       <h2>Update or delete your Routine</h2>
@@ -42,13 +42,13 @@ async function handleDelete(){
             return;
           }
           try{
-          await updateRoutine(token, 
-            { 
-              id: routineId,
-              name: name, 
-              goal: goal, 
-              isPublic: isPublic
-            });
+          // await updateRoutine(token, 
+          //   { 
+          //     id: routineId,
+          //     name: name, 
+          //     goal: goal, 
+          //     isPublic: isPublic
+          //   });
 
           getRoutines();
           navigate("/userRoutines")

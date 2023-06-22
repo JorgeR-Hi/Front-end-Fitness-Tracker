@@ -1,5 +1,7 @@
 const BASE_URL = `https://fitnesstrac-kr.herokuapp.com/api`
 
+
+//========Gets all Activities==========
 export const fetchAllActivities = async () => {
     try {
       const response = await fetch(`${BASE_URL}/activities`, {
@@ -17,6 +19,7 @@ export const fetchAllActivities = async () => {
     }
   }
 
+  //=========Makes Activity==========
   export const makeActivity = async (token, name, description) => {
     try {
       const response = await fetch(`${BASE_URL}/activities`, {
@@ -42,6 +45,7 @@ export const fetchAllActivities = async () => {
     }
   }
 
+  //===========Updates Activity=============
   export const updateActivity = async (token, name, description) => {
     try {
       const response = await fetch(`${BASE_URL}/activities`, {

@@ -13,6 +13,7 @@ import {
 import {fetchAllActivities} from "./endpoints/activites"
 import {fetchAllRoutines} from "./endpoints/routines"
 import {myData} from "./endpoints/user"
+import UpdateRoutine from "./updateroutine";
 
 function App(){
     const [token, setToken] = useState("")
@@ -132,6 +133,15 @@ function App(){
         navigate={navigate}
         isLoggedIn={isLoggedIn}
         user={user}
+        />}
+        />
+        <Route
+        path="/userRoutines/updateRoutine"
+        element={<UpdateRoutine
+        token={token}
+        navigate={navigate}
+        getRoutines={getRoutines}
+        routines={routines}
         />}
         />
     </Routes>

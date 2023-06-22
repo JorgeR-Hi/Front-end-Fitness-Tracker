@@ -32,14 +32,15 @@ function createRoutine({token, navigate}){
             value={goal}
             onChange={(ev) => setGoal(ev.target.value)}
             />
-            <p>Please check if you wish this to be public</p>
+            <p className="publicyn">Please check if you wish this to be public</p>
             <input
+            className='checkbox'
             type="checkbox"
             checked={isPublic}
             onChange={() => setIsPublic(!isPublic)}
             />
-            <button type="submit">Create your Routine</button>
-            <button type="submit" onClick={handleHome}>Home</button>
+            <button className='createRoutineBtn' type="submit">Create your Routine</button>
+            <button className="routineHome"type="submit" onClick={handleHome}>Home</button>
         </form>
     )
 }

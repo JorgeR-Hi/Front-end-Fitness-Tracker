@@ -14,7 +14,10 @@ function Login ({ setToken, navigate, setIsLoggedIn }) {
         
         console.log("this is the frontend!!!!",results);
         console.log("Results", results)
-
+        if(!username.trim() && !password.trim()){
+            alert("Please enter a username and password")
+            return; 
+          }
         if (results){
             console.log("Login successful!!!: ", results)
             setToken(results.token);

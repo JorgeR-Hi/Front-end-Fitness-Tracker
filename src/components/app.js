@@ -129,7 +129,6 @@ function App(){
         element={<UpdateRoutine
         token={token}
         navigate={navigate}
-        
         routines={routines}
         />}
         />

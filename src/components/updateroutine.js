@@ -50,7 +50,7 @@ async function handleDelete(){
               isPublic: isPublic
             });
 
-          getRoutines();
+          //getRoutines();
           navigate("/userRoutines")
           }catch(err){
             if(err){
